@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BimScript", "BimScript.csproj", "{56BE3675-DA0F-47FF-B772-0553B6B88710}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug 2024|x64 = Debug 2024|x64
+		Debug 2025|x64 = Debug 2025|x64
+		Debug|x64 = Debug|x64
+		Release 2024|x64 = Release 2024|x64
+		Release 2025|x64 = Release 2025|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56BE3675-DA0F-47FF-B772-0553B6B88710}.Debug 2024|x64.ActiveCfg = Debug 2024|x64
+		{56BE3675-DA0F-47FF-B772-0553B6B88710}.Debug 2024|x64.Build.0 = Debug 2024|x64
+		{56BE3675-DA0F-47FF-B772-0553B6B88710}.Debug 2025|x64.ActiveCfg = Debug 2025|x64
+		{56BE3675-DA0F-47FF-B772-0553B6B88710}.Debug 2025|x64.Build.0 = Debug 2025|x64
+		{56BE3675-DA0F-47FF-B772-0553B6B88710}.Debug|x64.ActiveCfg = Debug|x64
+		{56BE3675-DA0F-47FF-B772-0553B6B88710}.Debug|x64.Build.0 = Debug|x64
+		{56BE3675-DA0F-47FF-B772-0553B6B88710}.Release 2024|x64.ActiveCfg = Release 2024|x64
+		{56BE3675-DA0F-47FF-B772-0553B6B88710}.Release 2024|x64.Build.0 = Release 2024|x64
+		{56BE3675-DA0F-47FF-B772-0553B6B88710}.Release 2025|x64.ActiveCfg = Release 2025|x64
+		{56BE3675-DA0F-47FF-B772-0553B6B88710}.Release 2025|x64.Build.0 = Release 2025|x64
+		{56BE3675-DA0F-47FF-B772-0553B6B88710}.Release|x64.ActiveCfg = Release|x64
+		{56BE3675-DA0F-47FF-B772-0553B6B88710}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0008A89A-7B14-43F4-96E8-969A1C891A59}
+	EndGlobalSection
+EndGlobal

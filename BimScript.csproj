@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<Configurations>Debug;Release;Debug 2024;Debug 2025;Release 2024;Release 2025</Configurations>
+		<Platforms>x64</Platforms>
+	</PropertyGroup>
+
+	<Choose>
+		<When Condition="$(Configuration.Contains('2024'))">
+			<PropertyGroup>
+				<TargetFramework>net48</TargetFramework>
+				<RevitVersion>2024</RevitVersion>
+				<DefineConstants>$(DefineConstants);REVIT_2024_OR_GREATER</DefineConstants>
+			</PropertyGroup>
+		</When>
+	</Choose>
+
+	<Choose>
+		<When Condition="$(Configuration.Contains('2025'))">
+			<PropertyGroup>
+				<TargetFramework>net8.0-windows</TargetFramework>
+				<RevitVersion>2025</RevitVersion>
+				<DefineConstants>$(DefineConstants);REVIT_2024_OR_GREATER;REVIT_2025_OR_GREATER</DefineConstants>
+			</PropertyGroup>
+		</When>
+	</Choose>
+
+	<ItemGroup>
+	  <PackageReference Include="QuantConnect.pythonnet" Version="2.0.38" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="AdWindows">
+			<HintPath>..\..\..\..\..\Program Files\Autodesk\Revit $(RevitVersion)\AdWindows.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="RevitAPI">
+			<HintPath>..\..\..\..\..\Program Files\Autodesk\Revit $(RevitVersion)\RevitAPI.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="RevitAPIUI">
+			<HintPath>..\..\..\..\..\Program Files\Autodesk\Revit $(RevitVersion)\RevitAPIUI.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="rmdir /s /q &quot;%25APPDATA%25\Autodesk\Revit\Addins\$(RevitVersion)\BimScript\&quot;&#xD;&#xA;xcopy /Y &quot;$(TargetDir)*.dll&quot; &quot;%25APPDATA%25\Autodesk\Revit\Addins\$(RevitVersion)\BimScript\&quot;&#xD;&#xA;xcopy /Y &quot;$(ProjectDir)*.addin&quot; &quot;%25APPDATA%25\Autodesk\Revit\Addins\$(RevitVersion)\&quot;" />
+	</Target>
+
+</Project>

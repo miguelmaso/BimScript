@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>BimScript</Name>
+		<FullClassName>BimScript.Addin</FullClassName>
+		<Assembly>BimScript\BimScript.dll</Assembly>
+		<AddInId>56BE3675-DA0F-47FF-B772-0553B6B88710</AddInId>
+		<VendorId>SG</VendorId>
+		<VendorDescription>BimScript</VendorDescription>
+	</AddIn>
+</RevitAddIns>
