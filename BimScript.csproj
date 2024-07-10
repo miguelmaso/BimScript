@@ -2,6 +2,7 @@
 
 	<PropertyGroup>
 		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
 		<ImplicitUsings>disable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 		<Configurations>Debug;Release;Debug 2024;Debug 2025;Release 2024;Release 2025</Configurations>
@@ -32,6 +33,10 @@
 	  <PackageReference Include="QuantConnect.pythonnet" Version="2.0.38" />
 	</ItemGroup>
 
+	<!--<ItemGroup>
+		<FrameworkReference Include="Microsoft.WindowsDesktop.App" />
+	</ItemGroup>-->
+	
 	<ItemGroup>
 		<Reference Include="AdWindows">
 			<HintPath>..\..\..\..\..\Program Files\Autodesk\Revit $(RevitVersion)\AdWindows.dll</HintPath>
